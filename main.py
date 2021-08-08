@@ -41,9 +41,9 @@ if __name__ == '__main__':
 
     # 动态查找测试用例运行
     # ----------------------------------------------------
-    loader = unittest.defaultTestLoader
+    # loader = unittest.defaultTestLoader
     # 生成测试suites
-    suites = loader.discover(os.path.join(os.path.dirname(__file__), 'tests'), pattern='*.py', top_level_dir=os.path.dirname(__file__))
+    # suites = loader.discover(os.path.join(os.path.dirname(__file__), 'tests'), pattern='*.py', top_level_dir=os.path.dirname(__file__))
     # ----------------------------------------------------
 
     # 按需组装测试用例
@@ -55,14 +55,14 @@ if __name__ == '__main__':
     # ----------------------------------------------------
 
     # 指定runner为TextTestRunner
-    runner = unittest.TextTestRunner(verbosity=2)
+    # runner = unittest.TextTestRunner(verbosity=2)
     # 运行suites
-    runner.run(suites)
+    # runner.run(suites)
 
     # 使用测试报告模块生成测试报告
     # ----------------------------------------------------
-    # suite = unittest.defaultTestLoader.discover(os.path.join(os.path.dirname(__file__),"tests"),
-    #                                             pattern='*.py',top_level_dir=os.path.dirname(__file__))
-    # html_report = GenerateReport()
-    # html_report.generate_report(suite)
+    suite = unittest.defaultTestLoader.discover(os.path.join(os.path.dirname(__file__),"tests"),
+                                                pattern='*.py',top_level_dir=os.path.dirname(__file__))
+    html_report = GenerateReport()
+    html_report.generate_report(suite)
     # ----------------------------------------------------
