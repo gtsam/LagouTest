@@ -1,8 +1,11 @@
 # coding=utf-8
 import json
 import unittest
+import pytest
 import requests
 
+
+@pytest.mark.lagou
 class TestLaGou(unittest.TestCase):
     def setUp(self):
         self.s = requests.Session()

@@ -1,15 +1,18 @@
 # coding=utf-8
 from selenium import webdriver
 import unittest
+import pytest
 import time
 
 
+@pytest.mark.baidu
 class Baidu(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(30)
         self.base_url = "http://www.baidu.com/"
 
+    @pytest.mark.BaiduSearch
     def test_baidu_search(self):
         driver = self.driver
         driver.get(self.base_url + "/")
