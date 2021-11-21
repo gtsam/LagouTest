@@ -3,9 +3,9 @@
 import importlib.util
 import unittest
 import os
-from common.html_reporter import GenerateReport
-from tests.test_to_run import TestToRun
-from tests.itesting_test import ITestingTest
+from .common.html_reporter import GenerateReport
+from .tests.test_to_run import TestToRun
+from .tests.itesting_test import ITestingTest
 
 
 # 解析tests文件夹，并且返回module的字符串列表

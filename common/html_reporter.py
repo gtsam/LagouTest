@@ -1,7 +1,7 @@
 __author__ = 'iTesting'
 import os
 import time
-import HTMLTestRunner
+from .. import HTMLTestRunner
 
 
 class GenerateReport(object):
