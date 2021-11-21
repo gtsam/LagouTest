@@ -5,7 +5,7 @@ flag = False
 class TestSample(object):
     # 测试用例默认以test开头
     def test_equal(self):
-        assert 1 == 1
+        assert 1 == 0
 
     def test_not_equal(self):
         assert 1 != 0
@@ -21,3 +21,15 @@ class TestSample(object):
     @pytest.mark.skipif(flag == False, reason='by condition1')
     def test_equal3(self):
         assert 1 == 1
+
+    # 使用了pytest里的参数化
+    @pytest.mark.parametrize('login_data, project_name', [({"password": "iTestingIsGood", "email": "pleasefollowiTesting@outlook.com"}, {"project_name":"VIPTEST"})])
+    def test_merge_api_ui(self, login_data, project_name):
+        assert login_data['password'] == 'iTestingIsGood'
+        assert login_data['email'] == 'pleasefollowiTesting@outlook.com'
+        assert project_name['project_name'] == 'VIPTEST'
+
+
+if __name__ == '__main__':
+    sample = TestSample()
+    sample.test_merge_api_ui()
